@@ -1,4 +1,46 @@
 {% load static %}
+{# load the tag library #}
+{% load bootstrap3 %}
+
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <link rel="stylesheet" type="text/css" href="{% static 'OlimpiColombiaSite/stylesheets/main.css' %}" />
 
-<h1>OlimpiColombia</h1>
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#">OlimpiColombia</a>
+  </div>
+
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Registro</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="panel panel-primary">
+<h1 align="center">OlimpiColombia</h1>
+</div>
+
+{% for deporte in lista_deportes %}
+    {% if forloop.first %}<div class="row">{% endif %}
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+            <div class="caption">
+                <h3>{{ deporte.nombre }}</h3>
+                <p>{{ deporte.descripcion }}</p>
+            </div>
+        </div>
+    </div>
+    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+    {% if forloop.last %}</div>{% endif %}
+{% endfor %}
+
