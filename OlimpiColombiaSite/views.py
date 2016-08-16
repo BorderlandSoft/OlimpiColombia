@@ -1,6 +1,9 @@
-from django.views import generic
+from django.views.generic import ListView
+from .models import Deporte
 
 
-class IndexView(generic.TemplateView):
+class IndexView(ListView):
+    queryset = Deporte.objects.all()
     template_name = 'OlimpiColombiaSite/deportes.html'
-    context_object_name = 'latest_question_list'
+    context_object_name = 'lista_deportes'
+
