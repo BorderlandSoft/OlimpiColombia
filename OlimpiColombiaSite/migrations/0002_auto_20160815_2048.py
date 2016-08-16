@@ -58,7 +58,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='deporte',
             name='descripcion',
-            field=models.CharField(blank=True, max_length=150),
+            field=models.CharField(blank=True, max_length=1000),
         ),
         migrations.AddField(
             model_name='modalidad',
