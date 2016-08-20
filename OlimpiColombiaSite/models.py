@@ -43,11 +43,18 @@ class Competencia(models.Model):
     """
     Describe una competencia para un deporte.
     """
-    fecha = models.DateField()
-    hora = models.TimeField()
+    fecha = models.DateTimeField()
     participantes = models.ManyToManyField(Atleta)
     resultado = models.CharField(max_length=100)
     modalidad = models.ForeignKey(Modalidad, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nombre
+
+class Highlight(models.Model):
+    """
+    Modelo para guardar los highlights de las competencias incluyendo el atleta resaltado.
+    """
+    atleta = models.ForeignKey(Atleta)
+    competencia = models.ForeignKey(Competencia)
+    video = models.FileField()

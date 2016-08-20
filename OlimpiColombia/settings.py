@@ -17,6 +17,7 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -130,6 +131,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
+
+#Archivos de media (imagenes, video, etc.)
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
+MEDIA_URL = '/media/'
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
