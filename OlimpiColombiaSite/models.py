@@ -26,7 +26,6 @@ class Atleta(models.Model):
     peso = models.DecimalField(max_digits=4, decimal_places=1)
     estatura = models.DecimalField(max_digits=4, decimal_places=1)
     fotografia = models.ImageField(max_length=1000)
-    video_destacado = models.CharField(max_length=1000, blank=True)
 
 class Modalidad(models.Model):
     """
