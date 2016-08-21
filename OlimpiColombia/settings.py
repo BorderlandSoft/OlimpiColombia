@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'OlimpiColombia.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myapp',
-        'USER': 'myapp',
-        'PASSWORD': 'dbpass',
+        'NAME': 'OlimpiColombia',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT': '15432',
+        'PORT': '5432',
     }
 }
 
