@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deportistas</title>
+</head>
+<body>
+<h1> {{ deporte.nombre }}</h1>
+{% for atleta in object_list %}
+    <div>
+    <img src="{{ atleta.fotografia }}"/>
+    <table>
+        <tr>
+            <td>Nombre</td>
+            <td>{{ atleta.nombre }}</td>
+        </tr>
+        <tr>
+            <td>Fecha nacimiento</td>
+            <td>{{ atleta.fecha_nacimiento }}</td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td>{{ atleta.edad }}</td>
+        </tr>
+        <tr>
+            <td>Peso</td>
+            <td>{{ atleta.peso }}</td>
+        </tr>
+        <tr>
+            <td>Estatura</td>
+            <td>{{ atleta.estatura }}</td>
+        </tr>
+    </table>
+    </div>
+{% endfor %}
+</body>
+</html>

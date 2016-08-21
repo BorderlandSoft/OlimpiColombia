@@ -15,6 +15,12 @@ class Deporte(models.Model):
     descripcion = models.CharField(max_length=1000, blank=True)
     imagen = models.CharField(max_length=1000)
 
+class Entrenador(models.Model):
+    """
+    Describe a un Entrenador.
+    """
+    nombres = models.CharField(max_length=200)
+
 class Atleta(models.Model):
     """
     Describe a un Atleta.
@@ -25,30 +31,39 @@ class Atleta(models.Model):
     edad = models.IntegerField()
     peso = models.DecimalField(max_digits=4, decimal_places=1)
     estatura = models.DecimalField(max_digits=4, decimal_places=1)
-    fotografia = models.ImageField(max_length=1000)
+    fotografia = models.CharField(max_length=1000)
+    deporte = models.ForeignKey(Deporte, on_delete=models.CASCADE, null=True)
+    entrenador = models.ForeignKey(Entrenador, on_delete=models.CASCADE, null=True)
+    video_destacado = models.FileField(null=True)
+
+
+
 
 class Modalidad(models.Model):
     """
-    Defina la modalidad en la que participa un atleta para un deporte
-    y quien es su entrenador.
+    Defina la modalidad de un deporte
     """
     nombre = models.CharField(max_length=50)
-    medalla = models.CharField(max_length=20, blank=True)
-    entrenador = models.CharField(max_length=200)
     deporte = models.ForeignKey(Deporte, on_delete=models.CASCADE)
-    atleta = models.ForeignKey(Atleta, on_delete=models.CASCADE)
+
 
 class Competencia(models.Model):
     """
     Describe una competencia para un deporte.
     """
     fecha = models.DateTimeField()
-    participantes = models.ManyToManyField(Atleta)
-    resultado = models.CharField(max_length=100)
+    hora = models.TimeField(null=True)
+    descripcion = models.CharField(max_length=200, blank=True)
     modalidad = models.ForeignKey(Modalidad, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.nombre
+        return self.descripcion
+
+class Resultado(models.Model):
+    competencia = models.ForeignKey(Competencia, on_delete=models.CASCADE)
+    atleta = models.ForeignKey(Atleta, on_delete=models.CASCADE)
+    resultado = models.CharField(max_length=100)
+    video = models.FileField()
 
 class Highlight(models.Model):
     """
