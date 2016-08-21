@@ -8,7 +8,7 @@ from django.db import migrations
 def load_stores_from_sql():
     from OlimpiColombia.settings import BASE_DIR
     import os
-    sql_statements = open(os.path.join(BASE_DIR, 'OlimpiColombiaSite/sql/atleta.sql'), 'r').read()
+    sql_statements = open(os.path.join(BASE_DIR, 'OlimpiColombiaSite/sql/atleta.sql'),  encoding="utf8").read()
     return sql_statements
 
 
