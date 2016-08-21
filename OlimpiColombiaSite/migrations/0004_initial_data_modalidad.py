@@ -14,7 +14,7 @@ def load_stores_from_sql():
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('OlimpiColombiaSite', '0006_auto_20160820_2222'),
+        ('OlimpiColombiaSite', '0003_initial_data_deporte'),
     ]
 
     operations = [
