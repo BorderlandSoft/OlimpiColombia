@@ -8,13 +8,13 @@ from django.db import migrations
 def load_stores_from_sql():
     from OlimpiColombia.settings import BASE_DIR
     import os
-    sql_statements = open(os.path.join(BASE_DIR, 'OlimpiColombiaSite/sql/deporte.sql'),  encoding="utf8").read()
+    sql_statements = open(os.path.join(BASE_DIR, 'OlimpiColombiaSite/sql/modalidad.sql'),  encoding="utf8").read()
     return sql_statements
 
 
 class Migration(migrations.Migration):
     dependencies = [
-        ('OlimpiColombiaSite', '0002_auto_20160821_0832'),
+        ('OlimpiColombiaSite', '0003_initial_data_deporte'),
     ]
 
     operations = [

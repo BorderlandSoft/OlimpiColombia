@@ -33,7 +33,9 @@
     {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+            <a href="/deportistas/{{ deporte.id }}" >
+                <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+            </a>
             <div class="caption">
                 <h3>{{ deporte.nombre }}</h3>
                 <p>{{ deporte.descripcion }}</p>
@@ -43,4 +45,3 @@
     {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
     {% if forloop.last %}</div>{% endif %}
 {% endfor %}
-
