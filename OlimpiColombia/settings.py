@@ -17,7 +17,6 @@ import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -79,14 +78,14 @@ WSGI_APPLICATION = 'OlimpiColombia.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myapp',
         'USER': 'myapp',
-        'PASSWORD': 'dbpass',
+        'PASSWORD': 'mypass',
         'HOST': 'localhost',
-        #'PORT': '15432',
+        # 'PORT': '15432',
         'PORT': '5432',
     }
 }
@@ -122,7 +121,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
@@ -140,7 +138,7 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-#Archivos de media (imagenes, video, etc.)
+# Archivos de media (imagenes, video, etc.)
 MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
 MEDIA_URL = '/media/'
 
