@@ -33,7 +33,7 @@
     {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <a href="{% url 'OlimpiColombiaSite:deportista' deporte.id %}" >
+            <a href="{% url 'OlimpiColombiaSite:atleta' deporte.id %}" >
                 <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
             </a>
             <div class="caption">
