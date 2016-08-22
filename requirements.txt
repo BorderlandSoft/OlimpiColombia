@@ -6,3 +6,4 @@ psycopg2==2.6.2
 sqlparse==0.2.1
 whitenoise==3.2.1
 pytz==2016.6.1
+Pillow==3.3.1
