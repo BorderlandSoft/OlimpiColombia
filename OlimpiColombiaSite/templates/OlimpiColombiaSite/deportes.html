@@ -12,7 +12,7 @@
   <!-- El logotipo y el icono que despliega el menú se agrupan
        para mostrarlos mejor en los dispositivos móviles -->
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">OlimpiColombia</a>
+    <a class="navbar-brand" href="{% url 'OlimpiColombiaSite:index' %}">OlimpiColombia</a>
   </div>
 
   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
@@ -33,7 +33,7 @@
     {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <a href="/deportistas/{{ deporte.id }}" >
+            <a href="{% url 'OlimpiColombiaSite:deportista' deporte.id %}" >
                 <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
             </a>
             <div class="caption">

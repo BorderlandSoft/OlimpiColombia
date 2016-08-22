@@ -4,9 +4,11 @@ from .models import Deporte, Atleta, Modalidad, Competencia, Resultado
 
 
 class IndexView(ListView):
-    queryset = Deporte.objects.all()
     template_name = 'OlimpiColombiaSite/deportes.html'
     context_object_name = 'lista_deportes'
+
+    def get_queryset(self):
+        return Deporte.objects.all()
 
 
 class AtletasView(ListView):
@@ -44,5 +46,3 @@ class CalendarioView(ListView):
         # Add in the publisher
 
         context['atleta'] = self.atleta
-
-        return context
