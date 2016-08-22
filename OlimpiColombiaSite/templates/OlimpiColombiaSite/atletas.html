@@ -19,29 +19,48 @@
        otro elemento que se pueda ocultar al minimizar la barra -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Login</a></li>
-      <li><a href="#">Registro</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="panel panel-primary">
-<h1 align="center">OlimpiColombia</h1>
+<h1 align="center">{{ deporte.nombre }}</h1>
 </div>
 
-{% for deporte in lista_deportes %}
+{% for atleta in lista_atletas %}
     {% if forloop.first %}<div class="row">{% endif %}
     <div class="col-sm-6 col-md-4">
         <div class="thumbnail">
-            <a href="{% url 'OlimpiColombiaSite:deportista' deporte.id %}" >
-                <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+            <a href="#" >
+                <img class="img-responsive img-rounded" src="{{ atleta.fotografia }}" width="150" height="178"/>
             </a>
             <div class="caption">
-                <h3>{{ deporte.nombre }}</h3>
-                <p>{{ deporte.descripcion }}</p>
+               <table class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ atleta.nombres }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha nacimiento</th>
+                        <td>{{ atleta.fecha_nacimiento }}</td>
+                    </tr>
+                    <tr>
+                        <th>Edad</th>
+                        <td>{{ atleta.edad }}</td>
+                    </tr>
+                    <tr>
+                        <th>Peso</th>
+                        <td>{{ atleta.peso }}</td>
+                    </tr>
+                    <tr>
+                        <th>Estatura</th>
+                        <td>{{ atleta.estatura }}</td>
+                    </tr>
+               </table>
             </div>
         </div>
     </div>
     {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
     {% if forloop.last %}</div>{% endif %}
 {% endfor %}
+
