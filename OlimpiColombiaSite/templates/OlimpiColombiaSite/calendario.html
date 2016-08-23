@@ -64,15 +64,15 @@
                     <td><b>Fecha de Competencia</b></td>
                     <td><b>Descripción de la competencia</b></td>
                     <td><b>Resultado</b></td>
-
                 </tr>
                 <tr>
                     <td>{{ resultado.competencia.fecha }}</td>
                     <td>{{ resultado.competencia.descripcion }}</td>
                     <td>{{ resultado.resultado }}</td>
                 </tr>
-                </thead>
+            </thead>
         </table>
+        {% if resultado.momento_destacado %} <a href="">Momento Destacado</a> {%endif%}
         </div>
     </div>
     {% empty %}
