@@ -49,4 +49,4 @@ class CalendarioView(ListView):
 
 class HighlightView(DetailView):
     template_name = 'OlimpiColombiaSite/highlight.html'
-    pass
+    model = Highlight
