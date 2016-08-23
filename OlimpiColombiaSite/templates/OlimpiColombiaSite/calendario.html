@@ -64,6 +64,7 @@
                     <td><b>Fecha de Competencia</b></td>
                     <td><b>Descripción de la competencia</b></td>
                     <td><b>Resultado</b></td>
+
                 </tr>
                 <tr>
                     <td>{{ resultado.competencia.fecha }}</td>
@@ -74,4 +75,6 @@
         </table>
         </div>
     </div>
+    {% empty %}
+        <center><b>Lo sentimos, Actualmente no hay eventos registrados para este atleta</b></center>
 {% endfor %}
