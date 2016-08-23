@@ -86,5 +86,5 @@ class Highlight(models.Model):
     Modelo para guardar los highlights de las competencias incluyendo el atleta resaltado.
     """
     atleta = models.ForeignKey(Atleta)
-    competencia = models.ForeignKey(Competencia)
+    competencia = models.OneToOneField(Competencia, related_name = 'momento_destacado' )
     video = models.FileField()

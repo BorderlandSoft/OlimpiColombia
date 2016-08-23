@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import ListView
-from .models import Deporte, Atleta, Modalidad, Competencia, Resultado
+from django.views.generic import *
+from .models import *
 
 
 class IndexView(ListView):
@@ -46,3 +46,7 @@ class CalendarioView(ListView):
         context['atleta'] = self.atleta
 
         return context
+
+class HighlightView(DetailView):
+    template_name = 'OlimpiColombiaSite/highlight.html'
+    model = Highlight

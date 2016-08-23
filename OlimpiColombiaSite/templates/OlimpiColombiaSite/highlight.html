@@ -1,0 +1,31 @@
+{% load static %}
+{# load the tag library #}
+{% load bootstrap3 %}
+
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" type="text/css" href="{% static 'OlimpiColombiaSite/stylesheets/main.css' %}" />
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="{% url 'OlimpiColombiaSite:index' %}">OlimpiColombia</a>
+  </div>
+
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+    </ul>
+  </div>
+</nav>
+
+<center>
+  <video width="640" height="480" controls>
+    <source src="{{object.video.url}}" type="video/mp4">
+    <source src="{{object.video.url}}" type="video/ogg">
+    Tu navegador no soporta videos embebidos.
+  </video>
+</center>

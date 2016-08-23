@@ -70,8 +70,11 @@
                     <td>{{ resultado.competencia.descripcion }}</td>
                     <td>{{ resultado.resultado }}</td>
                 </tr>
-                </thead>
+            </thead>
         </table>
+        {% if resultado.momento_destacado %} <a href="/highlights/{{resultado.momento_destacado.id}}">Momento Destacado</a> {%endif%}
         </div>
     </div>
+    {% empty %}
+        <center><b>Lo sentimos, Actualmente no hay eventos registrados para este atleta</b></center>
 {% endfor %}
