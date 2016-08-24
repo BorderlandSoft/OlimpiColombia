@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from . import setting
 
 urlpatterns = [
     url(r'', include('OlimpiColombiaSite.urls')),
     url(r'^admin/', admin.site.urls),
-    #static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
 ]
