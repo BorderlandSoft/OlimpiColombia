@@ -79,12 +79,11 @@ class Resultado(models.Model):
     competencia = models.ForeignKey(Competencia, on_delete=models.CASCADE)
     atleta = models.ForeignKey(Atleta, on_delete=models.CASCADE)
     resultado = models.CharField(max_length=100, blank=True)
-    video = models.FileField(null=True)
 
 class Highlight(models.Model):
     """
     Modelo para guardar los highlights de las competencias incluyendo el atleta resaltado.
     """
     atleta = models.ForeignKey(Atleta)
-    competencia = models.OneToOneField(Competencia, related_name = 'momento_destacado' )
+    competencia = models.OneToOneField(Resultado, related_name = 'momento_destacado' )
     video = models.FileField()
