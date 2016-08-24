@@ -72,7 +72,7 @@
                 </tr>
             </thead>
         </table>
-        {% if resultado.momento_destacado %} <a href="/highlights/{{resultado.momento_destacado.id}}">Momento Destacado</a> {%endif%}
+        {% if resultado.momento_destacado is not None %} <a href="/highlights/{{resultado.momento_destacado.id}}">Momento Destacado</a> {%endif%}
         </div>
     </div>
     {% empty %}
