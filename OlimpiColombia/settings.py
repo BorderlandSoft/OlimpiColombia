@@ -75,15 +75,15 @@ WSGI_APPLICATION = 'OlimpiColombia.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myapp',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'myapp',
         'USER': 'myapp',
         'PASSWORD': 'mypass',
         'HOST': 'localhost',
-        # 'PORT': '15432',
-        'PORT': '5432',
+        'PORT': '15432',
+        #'PORT': '5432',
     }
 }
 
