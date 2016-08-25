@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -136,8 +137,15 @@ STATICFILES_DIRS = (
 )
 
 # Archivos de media (imagenes, video, etc.)
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
+#MEDIA_URL = '/media/'
+
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = "https://%s.s3.amazonaws.com/" % AWS_STORAGE_BUCKET_NAME
+MEDIA_ROOT = ''
+AWS_ACCESS_KEY_ID = os.environ['S3_key']
+AWS_SECRET_ACCESS_KEY = os.environ['S3_secret']
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/

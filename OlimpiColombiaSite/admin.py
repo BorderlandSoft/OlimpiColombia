@@ -20,7 +20,7 @@ class CompetenciaAdmin(admin.ModelAdmin):
     search_fields = ('modalidad',)
 
 class ResultadoAdmin(admin.ModelAdmin):
-    list_display = ('atleta', 'competencia', 'resultado', 'video')
+    list_display = ('atleta', 'competencia', 'resultado')
 
 
 class HighlightAdmin(admin.ModelAdmin):
