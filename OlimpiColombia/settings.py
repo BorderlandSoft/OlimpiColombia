@@ -136,8 +136,15 @@ STATICFILES_DIRS = (
 )
 
 # Archivos de media (imagenes, video, etc.)
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
+#MEDIA_URL = '/media/'
+
+AWS_STORAGE_BUCKET_NAME = "olimpicolombia6"
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
+MEDIA_ROOT = ''
+AWS_ACCESS_KEY_ID = "your_access_key_id"
+AWS_SECRET_ACCESS_KEY = "your_secret_access_key"
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
