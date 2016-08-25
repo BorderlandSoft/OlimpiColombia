@@ -140,7 +140,7 @@ STATICFILES_DIRS = (
 #MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
 #MEDIA_URL = '/media/'
 
-DEFAULT_FILE_STORAGE = 'storages.S3Storage.S3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 MEDIA_URL = "https://%s.s3.amazonaws.com/" % os.environ['AWS_STORAGE_BUCKET_NAME']
 MEDIA_ROOT = ''
 AWS_ACCESS_KEY_ID = os.environ['S3_key']
