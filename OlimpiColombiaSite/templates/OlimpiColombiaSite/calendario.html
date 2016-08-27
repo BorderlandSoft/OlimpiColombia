@@ -13,6 +13,21 @@
   <div class="navbar-header">
     <a class="navbar-brand" href="{% url 'OlimpiColombiaSite:index' %}">OlimpiColombia</a>
   </div>
+
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+            <li><a href="#">Bienvenid@, {{ user.get_username }}.</a></li>
+            <li><a href="/logout/">Salir</a></li>
+        {% else %}
+            <li><a href="/accounts/login/">Login</a></li>
+            <li><a href="/usuarios/registrar">Registro</a></li>
+        {% endif %}
+
+    </ul>
+  </div>
 </nav>
 <div class="panel panel-primary">
 <h1 align="center">Calendario</h1>
