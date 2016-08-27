@@ -7,6 +7,7 @@ from django.db import models
 class Imagen(models.Model):
     url = models.CharField(max_length=1000)
 
+
 class Deporte(models.Model):
     """
     Describe un deporte.
@@ -59,10 +60,11 @@ class Modalidad(models.Model):
     deporte = models.ForeignKey(Deporte, on_delete=models.CASCADE)
 
     def __str__(self):
-        return '%s, %s' %(self.nombre, self.deporte.nombre)
+        return '%s, %s' % (self.nombre, self.deporte.nombre)
 
     class Meta:
         verbose_name_plural = 'Modalidades'
+
 
 class Competencia(models.Model):
     """
@@ -75,15 +77,17 @@ class Competencia(models.Model):
     def __str__(self):
         return self.descripcion
 
+
 class Resultado(models.Model):
     competencia = models.ForeignKey(Competencia, on_delete=models.CASCADE)
     atleta = models.ForeignKey(Atleta, on_delete=models.CASCADE)
     resultado = models.CharField(max_length=100, blank=True)
+
 
 class Highlight(models.Model):
     """
     Modelo para guardar los highlights de las competencias incluyendo el atleta resaltado.
     """
     atleta = models.ForeignKey(Atleta)
-    competencia = models.OneToOneField(Resultado, related_name = 'momento_destacado' )
+    competencia = models.OneToOneField(Resultado, related_name='momento_destacado')
     video = models.FileField()
