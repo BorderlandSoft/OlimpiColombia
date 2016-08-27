@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 
 import os
 import dj_database_url
+from django.core.urlresolvers import reverse_lazy
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap3',
     'storages',
+    'Usuarios.apps.UsuariosConfig',
 ]
 
 MIDDLEWARE = [
@@ -81,10 +83,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'myapp',
         'USER': 'myapp',
-        'PASSWORD': 'mypass',
+        'PASSWORD': 'dbpass',
         'HOST': 'localhost',
-        # 'PORT': '15432',
-        'PORT': '5432',
+         'PORT': '15432',
+        #'PORT': '5432',
     }
 }
 
@@ -150,3 +152,7 @@ AWS_SECRET_ACCESS_KEY = os.environ['S3_secret']
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+LOGIN_REDIRECT_URL = reverse_lazy('OlimpiColombiaSite:index')
+LOGIN_REDIRECT_URL = reverse_lazy('OlimpiColombiaSite:index')

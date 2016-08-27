@@ -1,0 +1,94 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% load static %}
+{# load the tag library #}
+{% load bootstrap3 %}
+
+{# load css and javascript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<nav class="navbar navbar-default" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="{% url 'OlimpiColombiaSite:index' %}">OlimpiColombia</a>
+  </div>
+
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/accounts/login/">Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input class="form-control" type="text" name="first_name"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Apellidos</label>
+                <input class="form-control" type="text" name="last_name"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Nombre de usuario uniandes</label>
+                <input class="form-control" type="text" name="username"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Correo electrónico</label>
+                <input class="form-control" type="text" name="email"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Contraseña</label>
+                <input class="form-control" type="password" name="password1"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                <label>Confirmar contraseña</label>
+                <input class="form-control" type="password" name="password2"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="form-group">
+                 <button class="btn btn-primary" type="submit">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+</form>
+</body>
+</html>
