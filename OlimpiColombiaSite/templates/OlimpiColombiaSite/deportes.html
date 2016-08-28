@@ -1,3 +1,11 @@
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1598232090477266";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
 {% load static %}
 {# load the tag library #}
 {% load bootstrap3 %}
@@ -22,14 +30,19 @@
         {% if user.is_authenticated %}
             <li><a href="#">Bienvenid@, {{ user.get_username }}.</a></li>
             <li><a  href="/logout/">Salir</a></li>
+
         {% else %}
             <li><a href="/accounts/login/">Login</a></li>
             <li><a href="/usuarios/registrar">Registro</a></li>
+            <li><a href="{% url 'social:begin' 'facebook' %}">Iniciar con Facebook</a><li>
         {% endif %}
+
 
     </ul>
   </div>
 </nav>
+
+
 
 <div class="panel panel-primary">
 <h1 align="center">OlimpiColombia</h1>

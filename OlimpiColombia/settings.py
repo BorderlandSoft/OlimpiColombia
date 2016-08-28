@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'bootstrap3',
     'storages',
     'Usuarios.apps.UsuariosConfig',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'social.apps.django_app.context_processors.backends',
+                'social.apps.django_app.context_processors.login_redirect',
             ],
         },
     },
@@ -81,11 +84,11 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myapp',
-        'USER': 'myapp',
-        'PASSWORD': 'dbpass',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
-        'PORT': '15432',
+        'PORT': '5432',
 
     }
 }
@@ -156,3 +159,22 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 LOGIN_REDIRECT_URL = reverse_lazy('OlimpiColombiaSite:index')
 LOGIN_REDIRECT_URL = reverse_lazy('OlimpiColombiaSite:index')
+
+
+AUTHENTICATION_BACKENDS = (
+    'social.backends.facebook.FacebookAppOAuth2',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.twitter.TwitterOAuth',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1598232090477266'
+SOCIAL_AUTH_FACEBOOK_SECRET = '7e713e6abdafc57141fe99c56f3b3960'
+
+SOCIAL_AUTH_RAISE_EXCEPTIONS = False
+
+MIDDLEWARE_CLASSES = ( 'social_auth.middleware.SocialAuthExceptionMiddleware', )
+
+LOGIN_ERROR_URL = '/'
