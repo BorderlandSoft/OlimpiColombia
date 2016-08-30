@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib.auth.views import login, logout_then_login
 from django.contrib.auth.decorators import login_required
 
@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^calendario/(?P<pk>\d+)/$', login_required(views.CalendarioView.as_view())),
     url(r'^accounts/login/', login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/', logout_then_login, name='logout'),
+    #url(r'^users/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}, name="user-logout"),
+
 ]
