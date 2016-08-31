@@ -84,9 +84,9 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'myapp',
-        'USER': 'myapp',
-        'PASSWORD': 'dbpass',
+        'NAME': 'OlimpiColombia',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
         'HOST': 'localhost',
         'PORT': '5432',
 
@@ -173,6 +173,10 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
 
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
-MIDDLEWARE_CLASSES = ('social_auth.middleware.SocialAuthExceptionMiddleware',)
+SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
+    'fields': 'id,name,email',
+}
 
 LOGIN_ERROR_URL = '/'

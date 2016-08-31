@@ -13,9 +13,9 @@ INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('14/08/2016 07:30', 'DD/MM/YYYY hh24:mi'), 'Final Maraton Femenino',  13);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (2, 12,'Puesto 43, Tiempo 2:37.5', NULL);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (2, 46,'Puesto 74, Tiempo 2:44.05', NULL);
-INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (2, 85,'No Finalizó', NULL);
+INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (2, 85,'No Finalizï¿½', NULL);
 
-INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('19/08/2016 19:10', 'DD/MM/YYYY hh24:mi'), 'Clasificación equipo 1ra Ronda Serie 1',  18);
+INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('19/08/2016 19:10', 'DD/MM/YYYY hh24:mi'), 'Clasificaciï¿½n equipo 1ra Ronda Serie 1',  18);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (3, 13,'Puesto 6, Tiempo 3:01.84', NULL);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (3, 15,'Puesto 6, Tiempo 3:01.84', NULL);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (3, 20,'Puesto 6, Tiempo 3:01.84', NULL);
@@ -30,7 +30,7 @@ INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('16/08/2016 09:19', 'DD/MM/YYYY hh24:mi'), '1era Ronda serie 3',  1);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (5, 16,'Puesto 5, 13.09 mts', NULL);
 
-INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('13/08/2016 07:40', 'DD/MM/YYYY hh24:mi'), 'Clasificación grupo A',  19);
+INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('13/08/2016 07:40', 'DD/MM/YYYY hh24:mi'), 'Clasificaciï¿½n grupo A',  19);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (6, 29,'Clasificada, 14.52 mts', NULL);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (6, 152,'Puesto 10, 13.95 mts', NULL);
 
@@ -72,7 +72,7 @@ INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('13/08/2016 20:48', 'DD/MM/YYYY hh24:mi'), '800mts Serie 2',  9);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (18, 49,'Puesto 5, Tiempo 2:14.32', NULL);
 
-INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('16/08/2016 18:35', 'DD/MM/YYYY hh24:mi'), 'Clasificación Grupo A',  12);
+INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('16/08/2016 18:35', 'DD/MM/YYYY hh24:mi'), 'Clasificaciï¿½n Grupo A',  12);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (19, 54,'Puesto 5, 62.32 mts', NULL);
 
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('18/08/2016 19:10', 'DD/MM/YYYY hh24:mi'), 'Final',  12);
@@ -83,13 +83,13 @@ INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (21, 76,'Puesto 17, Tiempo 3:51.42', NULL);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (21, 79,'No FinalizÃƒÂ³', NULL);
 
-INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('15/08/2016 07:30', 'DD/MM/YYYY hh24:mi'), 'Clasificación grupo B',  20);
+INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('15/08/2016 07:30', 'DD/MM/YYYY hh24:mi'), 'Clasificaciï¿½n grupo B',  20);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (22, 74,'Puesto 4, 16.78 mts', NULL);
 
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('16/08/2016 07:50', 'DD/MM/YYYY hh24:mi'), 'Final Masculina',  20);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (23, 74,'Puesto 5, 17.09 mts', NULL);
 
-INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('12/08/2016 08:55', 'DD/MM/YYYY hh24:mi'), 'Clasificación grupo B',  11);
+INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('12/08/2016 08:55', 'DD/MM/YYYY hh24:mi'), 'Clasificaciï¿½n grupo B',  11);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (24, 106,'Puesto 11, 61.62 mts', NULL);
 
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('12/08/2016 18:41', 'DD/MM/YYYY hh24:mi'), '1era Ronda Serie 2',  4);
@@ -101,11 +101,11 @@ INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('19/08/2016 12:30', 'DD/MM/YYYY hh24:mi'), 'Final Femenina',  15);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (27, 128,'Puesto 32, Tiempo 1:35.40', NULL);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (27, 150,'Puesto 38, Tiempo 1:36.28', NULL);
-INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (27, 129,'No Finalizó', NULL);
+INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (27, 129,'No Finalizo', NULL);
 
 
 
-INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('12/08/2016 18:05', 'DD/MM/YYYY hh24:mi'), 'Clasificación grupo A',  10);
+INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('12/08/2016 18:05', 'DD/MM/YYYY hh24:mi'), 'Clasificaciï¿½n grupo A',  10);
 INSERT INTO "OlimpiColombiaSite_resultado" (COMPETENCIA_ID, ATLETA_ID, RESULTADO, VIDEO) VALUES (28, 130,'Puesto 15, 16.46 mts', NULL);
 
 INSERT INTO "OlimpiColombiaSite_competencia" (FECHA, DESCRIPCION, MODALIDAD_ID) VALUES (TO_TIMESTAMP('15/08/2016 21:15', 'DD/MM/YYYY hh24:mi'), '1era Ronda Serie 6',  3);
