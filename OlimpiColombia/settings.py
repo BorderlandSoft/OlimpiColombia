@@ -84,9 +84,9 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
+        'NAME': 'myapp',
+        'USER': 'myapp',
+        'PASSWORD': 'dbpass',
         'HOST': 'localhost',
         'PORT': '5432',
 
@@ -142,8 +142,8 @@ STATICFILES_DIRS = (
 )
 
 # Archivos de media (imagenes, video, etc.)
-#MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
-#MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'mediafiles')
+# MEDIA_URL = '/media/'
 
 AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -156,10 +156,8 @@ AWS_SECRET_ACCESS_KEY = os.environ['S3_secret']
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-
 LOGIN_REDIRECT_URL = reverse_lazy('OlimpiColombiaSite:index')
 LOGIN_REDIRECT_URL = reverse_lazy('OlimpiColombiaSite:index')
-
 
 AUTHENTICATION_BACKENDS = (
     'social.backends.facebook.FacebookAppOAuth2',
@@ -170,11 +168,11 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIAL_AUTH_LOGIN_REDIRECT_URL = "/"
 
-SOCIAL_AUTH_FACEBOOK_KEY = '1598232090477266'
-SOCIAL_AUTH_FACEBOOK_SECRET = '7e713e6abdafc57141fe99c56f3b3960'
+SOCIAL_AUTH_FACEBOOK_KEY = os.environ['FACEBOOK_KEY']
+SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
 
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
-MIDDLEWARE_CLASSES = ( 'social_auth.middleware.SocialAuthExceptionMiddleware', )
+MIDDLEWARE_CLASSES = ('social_auth.middleware.SocialAuthExceptionMiddleware',)
 
 LOGIN_ERROR_URL = '/'
