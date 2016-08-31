@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^highlights/(?P<pk>[0-9]+)/$', login_required(views.HighlightView.as_view()), name='highlights'),
     url(r'^calendario/(?P<pk>\d+)/$', login_required(views.CalendarioView.as_view())),
     url(r'^accounts/login/', login, {'template_name': 'login.html'}, name='login'),
-    #url(r'^logout/', logout_then_login, name='logout'),
-    url(r'^logout/$', logout, {'next_page': '/'}, name='logout'),
+    url(r'^logout/', logout_then_login, name='logout'),
+    #url(r'^logout/$', logout, {'next_page': '/'}, name='logout'),
 
 ]
