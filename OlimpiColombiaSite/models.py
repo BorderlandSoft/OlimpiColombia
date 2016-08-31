@@ -83,6 +83,8 @@ class Resultado(models.Model):
     atleta = models.ForeignKey(Atleta, on_delete=models.CASCADE)
     resultado = models.CharField(max_length=100, blank=True)
 
+    def __str__(self):
+        return self.resultado
 
 class Highlight(models.Model):
     """
