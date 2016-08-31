@@ -173,6 +173,6 @@ SOCIAL_AUTH_FACEBOOK_SECRET = os.environ['FACEBOOK_SECRET']
 
 SOCIAL_AUTH_RAISE_EXCEPTIONS = False
 
-MIDDLEWARE_CLASSES = ('social_auth.middleware.SocialAuthExceptionMiddleware',)
+#MIDDLEWARE_CLASSES = ('social_auth.middleware.SocialAuthExceptionMiddleware',)
 
 LOGIN_ERROR_URL = '/'
