@@ -6,9 +6,13 @@ from .models import *
 class IndexView(ListView):
     template_name = 'OlimpiColombiaSite/deportes.html'
     context_object_name = 'lista_deportes'
+    queryset = Deporte.objects.all()
+    #serializer_class = DeporteSerializer
 
     def get_queryset(self):
         return Deporte.objects.all()
+
+
 
 
 class AtletasView(ListView):
