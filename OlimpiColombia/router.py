@@ -4,8 +4,10 @@ from OlimpiColombiaSite.api.resources import DeporteViewSet, AtletaViewSet
 
 router = SimpleRouter()
 router.register(r'deportes', viewset=DeporteViewSet)
-router.register(r'atleta', viewset=AtletaViewSet)
+
 
 urlpatterns = [
-        url(r'', include(router.urls)),
+    url(r'deportista/(?P<atleta_id>[0-9]+)/$', AtletaViewSet.as_view()),
 ]
+
+urlpatterns += router.urls

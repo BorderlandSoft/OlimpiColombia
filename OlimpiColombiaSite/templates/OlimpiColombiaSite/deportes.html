@@ -45,15 +45,28 @@
 
 
 
-<div class="panel panel-primary"  ng-controller="deporteController">
-
+<div class="panel panel-primary" >
 <h1 align="center">OlimpiColombia</h1>
-<ul>
-  <li ng-repeat="x in deportes track by x.nombre">
-    {{nombre}}
-  </li>
-</ul>
 </div>
+
+
+
+{% verbatim %}
+<div ng-app="deporteApp"  ng-controller="deporteController">
+<div class="row" ng-repeat="deporte in deportes">
+    <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+            <a href="/atletas/{{deporte.id}}" >
+                <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+            </a>
+            <div class="caption">
+                <h3>{{ deporte.nombre }}</h3>
+                <p>{{ deporte.descripcion }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endverbatim %}
 
 {% for deporte in lista_deportes %}
     {% if forloop.first %}<div class="row">{% endif %}

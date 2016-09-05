@@ -12,6 +12,14 @@ app.controller('deporteController', function($scope, $http) {
     $http.get("/api/deportes/?format=json")
     .then(function(response) {
         $scope.deportes = response.data;
-
     });
 });
+
+var app = angular.module('atletaApp', []);
+app.controller('atletaController', function($scope, $http) {
+    $http.get("/api/deportista/"+ + "/?format=json")
+    .then(function(response) {
+        $scope.atleta = response.data;
+    });
+});
+

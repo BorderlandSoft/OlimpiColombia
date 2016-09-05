@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from OlimpiColombiaSite.models import Deporte, Atleta
-from django.contrib.auth.models import User
+
 
 class DeporteSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
