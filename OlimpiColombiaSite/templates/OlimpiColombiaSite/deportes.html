@@ -1,4 +1,4 @@
-<html ng-app="deporteApp">
+<html ng-app="OlimpiColombiaApp">
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -18,7 +18,10 @@
 <link rel="stylesheet" type="text/css" href="{% static 'OlimpiColombiaSite/stylesheets/main.css' %}" />
 <script src="{% static 'OlimpiColombiaSite/scripts/angular-1.5.8.js' %}"></script>
 <script src="{% static 'OlimpiColombiaSite/scripts/angular-route-1.5.8.js' %}"></script>
+<script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+<script src="{% static 'OlimpiColombiaSite/scripts/app.js' %}"></script>
 <script src="{% static 'OlimpiColombiaSite/scripts/controllers.js' %}"></script>
+
 
 <nav class="navbar navbar-default" role="navigation">
   <!-- El logotipo y el icono que despliega el menú se agrupan
@@ -49,39 +52,24 @@
 <h1 align="center">OlimpiColombia</h1>
 </div>
 
-
-
 {% verbatim %}
-<div ng-app="deporteApp"  ng-controller="deporteController">
-<div class="row" ng-repeat="deporte in deportes">
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <a href="/atletas/{{deporte.id}}" >
-                <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
-            </a>
-            <div class="caption">
-                <h3>{{ deporte.nombre }}</h3>
-                <p>{{ deporte.descripcion }}</p>
+<div ng-app="OlimpiColombiaApp"  ng-controller="DeporteController">
+<div class="row">
+    <div ng-repeat="deporte in deportes">
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="/atletas/{{deporte.id}}" >
+                    <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+                </a>
+                <div class="caption">
+                    <h3>{{ deporte.nombre }}</h3>
+                    <p>{{ deporte.descripcion }}</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
+</div>
 {% endverbatim %}
-
-{% for deporte in lista_deportes %}
-    {% if forloop.first %}<div class="row">{% endif %}
-    <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-            <a href="{% url 'OlimpiColombiaSite:atleta' deporte.id %}" >
-                <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
-            </a>
-            <div class="caption">
-                <h3>{{ deporte.nombre }}</h3>
-                <p>{{ deporte.descripcion }}</p>
-            </div>
-        </div>
-    </div>
-    {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
-    {% if forloop.last %}</div>{% endif %}
-{% endfor %}
 </html>

@@ -1,25 +1,19 @@
-//var atletaControllers = angular.module('atletaControllers',[]);
+var OlimpiColombiaControllers = angular.module('OlimpiColombiaControllers', []);
 
-/*atletaControllers.atletaControllers('AtletaControllers', ['$scope','$routeParams','$http',
-    function ($scope, $routeParams, $http) {
-        $http.get('http://localhost:8000/api/atleta/' + $routeParams.atletaId + '/?format=json').success(function (data) {
-           $scope.atleta = data;
-        });
-}])*/
 
-var app = angular.module('deporteApp', []);
-app.controller('deporteController', function($scope, $http) {
+OlimpiColombiaControllers.controller('DeporteController', function($rootScope, $scope, $http) {
     $http.get("/api/deportes/?format=json")
     .then(function(response) {
         $scope.deportes = response.data;
     });
 });
 
-var app = angular.module('atletaApp', []);
-app.controller('atletaController', function($scope, $http) {
-    $http.get("/api/deportista/"+ + "/?format=json")
-    .then(function(response) {
-        $scope.atleta = response.data;
-    });
-});
+OlimpiColombiaControllers.controller('AtletaController', ['$scope','$http','$routeParams',
+	 function($scope, $http, $routeParams)
+		{
+			$http.get("/api/deportista/"+ $routeParams.deporteID + "/?format=json").success (function(data){
+				$scope.atletas = data;
+				$scope.deporteId = $routeParams.deporteID;
+			});
+}]);
 

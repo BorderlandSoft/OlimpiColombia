@@ -1,0 +1,15 @@
+{% verbatim %}
+<div>
+	
+	<ul> 
+		<li class="itemHolder" ng-repeat="deporte in deportes">
+		<a href="#/atletas/{{deporte.id}}"><img ng-src="{{deporte.imagen}}"></a>
+			<div>
+				<h3> {{deporte.nombre | uppercase }}</h3>
+				<p> {{deporte.descripcion}}</p>
+
+			</div>
+		</li>
+	</ul>
+</div>
+{% endverbatim %}

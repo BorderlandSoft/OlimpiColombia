@@ -1,0 +1,67 @@
+<!doctype html>
+<html ng-app="OlimpiColombiaApp">
+<head>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.7&appId=1751071491798946";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    {% load static %}
+    {# load the tag library #}
+    {% load bootstrap3 %}
+
+    {# load css and javascript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+	<title>OlimpiColombia</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'OlimpiColombiaSite/stylesheets/main.css' %}" />
+    <script src="{% static 'OlimpiColombiaSite/scripts/angular-1.5.8.js' %}"></script>
+    <script src="{% static 'OlimpiColombiaSite/scripts/angular-route-1.5.8.js' %}"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
+    <script src="{% static 'OlimpiColombiaSite/scripts/app.js' %}"></script>
+    <script src="{% static 'OlimpiColombiaSite/scripts/controllers.js' %}"></script>
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="{% url 'OlimpiColombiaSite:index' %}">OlimpiColombia</a>
+  </div>
+
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+            <li><a href="#">Bienvenid@, {{ user.get_username }}.</a></li>
+            <li><a  href="/logout/">Salir</a></li>
+
+        {% else %}
+            <li><a href="/accounts/login/">Login</a></li>
+            <li><a href="/usuarios/registrar">Registro</a></li>
+        {% endif %}
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="panel panel-primary" >
+<h1 align="center">OlimpiColombia</h1>
+</div>
+
+
+<div class="main" ng-view>
+
+	 <!-- everthing here was gone to list.html file inside partials folder -->
+
+</div>
+</body>
+</html>
