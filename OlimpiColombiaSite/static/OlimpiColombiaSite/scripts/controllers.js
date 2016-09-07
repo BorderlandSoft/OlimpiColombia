@@ -11,7 +11,11 @@ OlimpiColombiaControllers.controller('DeporteController', function($rootScope, $
 OlimpiColombiaControllers.controller('AtletaController', ['$scope','$http','$routeParams',
 	 function($scope, $http, $routeParams)
 		{
-			$http.get("/api/deportista/"+ $routeParams.deporteID + "/?format=json").success (function(data){
+		    $http.get("/api/deportes/"+ $routeParams.deporteID + "/?format=json").success (function(data) {
+                $scope.deporte = data;
+            });
+
+	    	$http.get("/api/deportista/"+ $routeParams.deporteID + "/?format=json").success (function(data){
 				$scope.atletas = data;
 				$scope.deporteId = $routeParams.deporteID;
 			});

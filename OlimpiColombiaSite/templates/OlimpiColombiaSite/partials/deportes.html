@@ -1,15 +1,18 @@
 {% verbatim %}
-<div>
-	
-	<ul> 
-		<li class="itemHolder" ng-repeat="deporte in deportes">
-		<a href="#/atletas/{{deporte.id}}"><img ng-src="{{deporte.imagen}}"></a>
-			<div>
-				<h3> {{deporte.nombre | uppercase }}</h3>
-				<p> {{deporte.descripcion}}</p>
-
-			</div>
-		</li>
-	</ul>
+<div class="row">
+    <div ng-repeat="deporte in deportes">
+        <div class="clearfix" ng-if="$index % 3 == 0"></div>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+                <a href="#/atletas/{{deporte.id}}" >
+                    <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="150" height="178"/>
+                </a>
+                <div class="caption">
+                    <h3>{{ deporte.nombre }}</h3>
+                    <p>{{ deporte.descripcion }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endverbatim %}

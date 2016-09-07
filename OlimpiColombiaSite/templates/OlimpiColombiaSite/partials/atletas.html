@@ -1,6 +1,8 @@
 {% verbatim %}
 <div class="details" ng-model="atletas">
+
     <h1>{{deporteId}}</h1>
+    <h2>{{ deporte.nombre }}</h2>
     <ul>
 		<li class="itemHolder" ng-repeat="atleta in atletas ">
 		<img ng-src="{{atleta.fotografia}}">
