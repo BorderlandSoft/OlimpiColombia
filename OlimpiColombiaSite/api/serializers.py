@@ -11,4 +11,4 @@ class DeporteSerializer(serializers.HyperlinkedModelSerializer):
 class AtletaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Atleta
-        fields = ('id','nombres','lugar_nacimiento','fecha_nacimiento', 'edad', 'peso')
+        fields = ('id','nombres','lugar_nacimiento','fecha_nacimiento', 'edad', 'peso', 'estatura', 'fotografia', 'deporte', 'video_destacado')

@@ -1,16 +1,59 @@
 {% verbatim %}
+<div class="panel panel-primary" >
+    <div class="row" align="center">
+        <div class="col-sm-6">
+            <img class="img-responsive img-rounded" src="{{ deporte.imagen }}" width="75" height="89"/>
+         </div>
+        <div class="col-sm-1">
+            <h1 align="center">{{ deporte.nombre }}</h1>
+         </div>
+    </div>
+</div>
+
 <div class="details" ng-model="atletas">
 
-    <h1>{{deporteId}}</h1>
-    <h2>{{ deporte.nombre }}</h2>
-    <ul>
-		<li class="itemHolder" ng-repeat="atleta in atletas ">
-		<img ng-src="{{atleta.fotografia}}">
-			<div>
-				<h3> {{atleta.nombres | uppercase }}</h3>
-
-			</div>
-		</li>
-	</ul>
+    <div class="row thumbnail" ng-repeat="atleta in atletas " >
+            <div class="col-sm-6 col-md-4">
+                <div>
+                    <a href="#" >
+                        <img ng-src="{{atleta.fotografia}}"  width="150" height="178">
+                    </a>
+                 </div>
+             </div>
+            <div class="col-sm-6 col-md-4 thumbnail">
+              <table class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <td>{{ atleta.nombres }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha nacimiento</th>
+                        <td>{{ atleta.fecha_nacimiento }}</td>
+                    </tr>
+                    <tr>
+                        <th>Edad</th>
+                        <td>{{ atleta.edad }}</td>
+                    </tr>
+                    <tr>
+                        <th>Peso</th>
+                        <td>{{ atleta.peso }}</td>
+                    </tr>
+                    <tr>
+                        <th>Estatura</th>
+                        <td>{{ atleta.estatura }}</td>
+                    </tr>
+               </table>
+             </div>
+            <div class="col-sm-6 col-md-4">
+                <div class="row" align="center">
+                    <video width="200" height="150" controls >
+                        <source src="{{atleta.video_destacado}}" type="video/mp4"/>
+                    </video>
+                 </div>
+                <div class="row" align="center">
+                    <a href="/calendario/{{ atleta.id }}" >Resultados Competencia</a>
+                </div>
+             </div>
+     </div>
 </div>
 {% endverbatim %}
