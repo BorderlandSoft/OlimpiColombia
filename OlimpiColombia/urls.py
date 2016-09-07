@@ -17,6 +17,7 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from .router import urlpatterns
 
 urlpatterns = [
     url(r'', include('OlimpiColombiaSite.urls')),
@@ -24,4 +25,6 @@ urlpatterns = [
     url(r'^usuarios/', include('Usuarios.urls')),
     url('', include('django.contrib.auth.urls', namespace='auth')),
     url('', include('social.apps.django_app.urls', namespace='social')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    url(r'^api/', include(urlpatterns)),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
